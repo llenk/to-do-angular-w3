@@ -1,0 +1,26 @@
+{
+  "name": "to-do-angular-w3",
+  "version": "1.0.0",
+  "description": "[ ] create files  [ ] add express et.al. [ ] link files [ ] schema [ ] connect database [ ] table to display [ ] get request client side [ ] get request server side [ ] create input fields [ ] post request client side [ ] post request server side [ ] add complete option on DOM [ ] update request client side [ ] update request server side [ ] add delete button on DOM [ ] delete request client side [ ] delete request server side [ ] CSS styling for complete/not [ ] CSS styling in general [ ] Bootstrap added in [ ] are you sure? when deleting [ ] inputs in form [ ] client side validation for input fields [ ] category added in to input [ ] category added in to database [ ] category filtering [ ] completed tasks at bottom of page",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llenk/to-do-angular-w3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llenk/to-do-angular-w3/issues"
+  },
+  "homepage": "https://github.com/llenk/to-do-angular-w3#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.16"
+  }
+}
