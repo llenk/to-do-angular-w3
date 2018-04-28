@@ -4,15 +4,18 @@
 [x] add express et.al.
 [x] base of server
 [x] link files
-[ ] schema
-[ ] connect database
-[ ] table to display
-[ ] get request client side
-[ ] get request server side
-[ ] create input fields
-[ ] post request client side
-[ ] post request server side
-[ ] add complete option on DOM
+[x] schema
+[x] connect database
+[x] table framework
+[x] get request client side
+[x] get request server side
+[x] client side code to display
+[x] table display
+[x] display on page load
+[x] create input fields
+[x] post request client side
+[x] post request server side
+[x] add complete option on DOM
 [ ] update request client side
 [ ] update request server side
 [ ] add delete button on DOM

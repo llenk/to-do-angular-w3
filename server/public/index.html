@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,38 @@
     <script src="scripts/client.js"></script>
     <title>Document</title>
 </head>
-<body>
-    
+
+<body ng-app="TaskApp">
+    <h1>To Do List</h1>
+    <div ng-controller="TaskController as vm">
+        <form ng-submit="vm.addTask()">
+            <input type="text" placeholder="name" ng-model="vm.newTask.name"/>
+            <input type="radio" ng-model="vm.newTask.complete" ng-value="true"/>Complete
+            <input type="radio" ng-model="vm.newTask.complete" ng-value="false"/> Not
+            <button>Add!</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Complete?</th>
+                    <th>Complete!</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="task in vm.taskArray">
+                    <td>{{task.name}}</td>
+                    <td>{{task.complete}}</td>
+                    <td>
+                        <button>Complete!</button>
+                    </td>
+                    <td>
+                        <button>Delete</button>
+                    </td>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
