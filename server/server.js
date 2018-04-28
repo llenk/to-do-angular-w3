@@ -21,18 +21,36 @@ app.get('/task', function (req, res) {
         .then((data) => {
             res.send(data);
         }).catch((error) => {
-            res.send(500);
+            res.sendStatus(500);
         });
 });
 app.post('/task', function (req, res) {
     Task.create(req.body)
         .then(() => {
-            res.send(200);
+            res.sendStatus(200);
         }).catch((error) => {
             console.log(error);
-            res.send(500);
+            res.sendStatus(500);
         });
-})
+});
+app.put('/task', function (req, res) {
+    Task.findByIdAndUpdate(req.body._id, req.body)
+        .then(() => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log(error);
+            res.sendStatus(500);
+        });
+});
+app.delete('/task', function (req, res) {
+    Task.findByIdAndRemove(req.query._id)
+        .then(() => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log(error);
+            res.sendStatus(500);
+        });
+});
 
 // Connect to mongo
 const databaseUrl = 'mongodb://localhost:27017/todo';

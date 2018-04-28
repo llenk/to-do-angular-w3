@@ -16,11 +16,11 @@
 [x] post request client side
 [x] post request server side
 [x] add complete option on DOM
-[ ] update request client side
-[ ] update request server side
-[ ] add delete button on DOM
-[ ] delete request client side
-[ ] delete request server side
+[x] update request client side
+[x] update request server side
+[x] add delete button on DOM
+[x] delete request client side
+[x] delete request server side
 [ ] CSS styling for complete/not
 [ ] CSS styling in general
 [ ] Bootstrap added in

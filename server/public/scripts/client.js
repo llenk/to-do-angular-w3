@@ -1,9 +1,7 @@
 var app = angular.module('TaskApp', []);
 
 app.controller('TaskController', ['$http', function($http) {
-    console.log('TaskController loaded');
-
-    var self = this;
+   var self = this;
 
     self.newTask = {complete: false};
 
@@ -23,6 +21,34 @@ app.controller('TaskController', ['$http', function($http) {
             method: 'POST',
             url: '/task',
             data: self.newTask
+        }).then(function (response) {
+            console.log(response.status);
+            self.displayArray();
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    self.taskCompleted = function(task) {
+        task.complete = true;
+        $http({
+            method: 'PUT',
+            url: '/task',
+            data: task
+        }).then(function (response) {
+            console.log(response.status);
+            self.displayArray();
+        }).catch(function (error) {
+            console.log(error);
+        });
+
+        
+    }
+    self.deleteTask = function(task) {
+        $http({
+            method: 'DELETE',
+            url: '/task',
+            params: task
         }).then(function (response) {
             console.log(response.status);
             self.displayArray();

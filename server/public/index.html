@@ -34,10 +34,10 @@
                     <td>{{task.name}}</td>
                     <td>{{task.complete}}</td>
                     <td>
-                        <button>Complete!</button>
+                        <button ng-click="vm.taskCompleted(task)">Complete!</button>
                     </td>
                     <td>
-                        <button>Delete</button>
+                        <button ng-click="vm.deleteTask(task)">Delete</button>
                     </td>
             </tbody>
         </table>
