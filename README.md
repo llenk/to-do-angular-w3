@@ -21,13 +21,13 @@
 - [x] add delete button on DOM
 - [x] delete request client side
 - [x] delete request server side
-- [ ] CSS styling for complete/not
-- [ ] CSS styling in general
-- [ ] Bootstrap added in
+- [x] CSS styling for complete/not
+- [x] CSS styling in general
+- [x] Bootstrap added in
 - [ ] are you sure? when deleting
 - [ ] inputs in form
 - [ ] client side validation for input fields
 - [ ] category added in to input
-- [ ] category added in to database
+- [x] category added in to database
 - [ ] category filtering
 - [ ] completed tasks at bottom of page
