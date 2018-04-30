@@ -24,13 +24,15 @@ app.controller('TaskController', ['$http', function($http) {
         }).then(function (response) {
             console.log(response.status);
             self.displayArray();
+            self.newTask = {complete: false};
         }).catch(function (error) {
             console.log(error);
         });
-    }
+    };
 
     self.taskCompleted = function(task) {
         task.complete = true;
+        task.name = '✅ ' + task.name;
         $http({
             method: 'PUT',
             url: '/task',
@@ -43,7 +45,8 @@ app.controller('TaskController', ['$http', function($http) {
         });
 
         
-    }
+    };
+
     self.deleteTask = function(task) {
         $http({
             method: 'DELETE',
@@ -55,6 +58,16 @@ app.controller('TaskController', ['$http', function($http) {
         }).catch(function (error) {
             console.log(error);
         });
+    };
+
+    self.trueToCompleted = function(bool) {
+        if (bool) {
+            return 'completed';
+        }
+        else {
+            return 'not';
+        }
     }
+
     self.displayArray();
 }]);

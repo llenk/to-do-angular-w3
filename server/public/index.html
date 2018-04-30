@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="vendors/bootstrap.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
@@ -12,35 +13,53 @@
 </head>
 
 <body ng-app="TaskApp">
-    <h1>To Do List</h1>
+    <div class="headerDiv">
+        <h1>To Do List</h1>
+    </div>
     <div ng-controller="TaskController as vm">
-        <form ng-submit="vm.addTask()">
-            <input type="text" placeholder="name" ng-model="vm.newTask.name"/>
-            <input type="radio" ng-model="vm.newTask.complete" ng-value="true"/>Complete
-            <input type="radio" ng-model="vm.newTask.complete" ng-value="false"/> Not
-            <button>Add!</button>
-        </form>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Complete?</th>
-                    <th>Complete!</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="task in vm.taskArray">
-                    <td>{{task.name}}</td>
-                    <td>{{task.complete}}</td>
-                    <td>
-                        <button ng-click="vm.taskCompleted(task)">Complete!</button>
-                    </td>
-                    <td>
-                        <button ng-click="vm.deleteTask(task)">Delete</button>
-                    </td>
-            </tbody>
-        </table>
+        <div class="formDiv form-group">
+                <h3>Add New Task</h3>
+            <form ng-submit="vm.addTask()">
+                <div class="form-group row">
+                    <input type="text" placeholder="name" ng-model="vm.newTask.name" />
+                </div>
+                <div class="form-group row form-check">
+                    
+                    <input type="radio" name="taskComplete" ng-model="vm.newTask.complete" ng-value="true" class="form-check-input"
+                    />
+                    <label for="taskComplete">Complete</label>
+                </div>
+                <div class="form-group row form-check">
+                    <input type="radio" name="taskNotComplete" ng-model="vm.newTask.complete" ng-value="false" class="form-check-input"
+                    />
+                    <label for="taskNotComplete">Not Complete</label>
+                </div>
+                <div class="form-group row">
+                    <button>Add!</button>
+                </div>
+            </form>
+        </div>
+        <div class="tableDiv">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Complete!</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="task in vm.taskArray" ng-class="vm.trueToCompleted(task.complete)">
+                        <td>{{task.name}}</td>
+                        <td>
+                            <button ng-click="vm.taskCompleted(task)" ng-show="!task.complete">Complete!</button>
+                        </td>
+                        <td>
+                            <button ng-click="vm.deleteTask(task)">Delete</button>
+                        </td>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 

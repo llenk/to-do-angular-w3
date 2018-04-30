@@ -1,0 +1,42 @@
+body {
+    background: #F6F6F4;
+    color: #1F1D1F;
+}
+h1 {
+    background: #A08F87;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size: 50px;
+}
+h3 {
+    background: #A08F87;
+    padding: 5px;
+}
+.completed {
+    background: #8A7D7E;
+}
+.not {
+    background: #D69597;
+}
+.headerDiv {
+    width: 10%;
+    float: left;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    top: 0px;
+}
+.formDiv {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    position: fixed;
+    margin: 0 0 0 10%;
+}
+form {
+    margin-left: 35px;
+}
+.tableDiv {
+    width: 60%;
+    float: left;
+    margin: 0 0 0 40%;
+}
