@@ -18,21 +18,22 @@
     </div>
     <div ng-controller="TaskController as vm">
         <div class="formDiv form-group">
-                <h3>Add New Task</h3>
+            <h3>Add New Task</h3>
             <form ng-submit="vm.addTask()">
                 <div class="form-group row">
-                    <input type="text" placeholder="name" ng-model="vm.newTask.name" />
+                    <input type="text" placeholder="name" ng-model="vm.newTask.name" required/>
                 </div>
                 <div class="form-group row form-check">
-                    
-                    <input type="radio" name="taskComplete" ng-model="vm.newTask.complete" ng-value="true" class="form-check-input"
-                    />
+
+                    <input type="radio" name="taskComplete" ng-model="vm.newTask.complete" ng-value="true" class="form-check-input" />
                     <label for="taskComplete">Complete</label>
                 </div>
                 <div class="form-group row form-check">
-                    <input type="radio" name="taskNotComplete" ng-model="vm.newTask.complete" ng-value="false" class="form-check-input"
-                    />
+                    <input type="radio" name="taskNotComplete" ng-model="vm.newTask.complete" ng-value="false" class="form-check-input" />
                     <label for="taskNotComplete">Not Complete</label>
+                </div>
+                <div class="form-group row">
+                    <input type="text" placeholder="category" ng-model="vm.newTask.category">
                 </div>
                 <div class="form-group row">
                     <button>Add!</button>
@@ -44,13 +45,15 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Complete!</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="task in vm.taskArray" ng-class="vm.trueToCompleted(task.complete)">
+                    <tr ng-repeat="task in vm.taskArray | orderBy:'complete'" ng-class="vm.trueToCompleted(task.complete)">
                         <td>{{task.name}}</td>
+                        <td>{{task.category}}</td>
                         <td>
                             <button ng-click="vm.taskCompleted(task)" ng-show="!task.complete">Complete!</button>
                         </td>

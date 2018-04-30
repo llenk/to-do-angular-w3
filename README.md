@@ -24,10 +24,10 @@
 - [x] CSS styling for complete/not
 - [x] CSS styling in general
 - [x] Bootstrap added in
-- [ ] are you sure? when deleting
-- [ ] inputs in form
-- [ ] client side validation for input fields
-- [ ] category added in to input
+- [x] are you sure? when deleting
+- [x] inputs in form
+- [x] client side validation for input fields
+- [x] category added in to input
 - [x] category added in to database
 - [ ] category filtering
-- [ ] completed tasks at bottom of page
+- [x] completed tasks at bottom of page

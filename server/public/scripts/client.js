@@ -17,6 +17,9 @@ app.controller('TaskController', ['$http', function($http) {
     };
 
     self.addTask = function() {
+        if (self.newTask.complete) {
+            self.newTask.name = '✅ ' + self.newTask.name;
+        }
         $http({
             method: 'POST',
             url: '/task',
@@ -32,7 +35,7 @@ app.controller('TaskController', ['$http', function($http) {
 
     self.taskCompleted = function(task) {
         task.complete = true;
-        task.name = '✅ ' + task.name;
+        task.name = '✅ ' + task.name; // this works for me, but is this bad code?
         $http({
             method: 'PUT',
             url: '/task',
@@ -48,16 +51,18 @@ app.controller('TaskController', ['$http', function($http) {
     };
 
     self.deleteTask = function(task) {
-        $http({
-            method: 'DELETE',
-            url: '/task',
-            params: task
-        }).then(function (response) {
-            console.log(response.status);
-            self.displayArray();
-        }).catch(function (error) {
-            console.log(error);
-        });
+        if (confirm('Really? Or are you just lazy?')) {
+            $http({
+                method: 'DELETE',
+                url: '/task',
+                params: task
+            }).then(function (response) {
+                console.log(response.status);
+                self.displayArray();
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
     };
 
     self.trueToCompleted = function(bool) {
