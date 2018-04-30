@@ -4,8 +4,8 @@ body {
 }
 h1 {
     background: #A08F87;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
+    writing-mode: vertical-rl;
+    letter-spacing: 30px;
     font-size: 50px;
 }
 h3 {
@@ -21,7 +21,6 @@ h3 {
 .headerDiv {
     width: 10%;
     float: left;
-    position: -webkit-sticky; /* Safari */
     position: fixed;
     top: 0px;
 }
